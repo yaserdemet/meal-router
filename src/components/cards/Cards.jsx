@@ -10,9 +10,11 @@ const Cards = ({ recipes }) => {
         <Card key={index}>
           <Header>{recipe.label}</Header>
           <Image src={recipe.image || defaultImage} />
+{/* // ? eğer image değeri tanımlanmışsa onu kullanıyoruz, eğer tanımlanmış değilse defaultImage olarak kullanıyoruz */}
           <Button
             onClick={() =>
               navigate('detail', { state: recipe, replace: false })
+              // * butona basıldığında detail sayfasına gidiyor
             }
           >
             View More

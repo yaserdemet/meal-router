@@ -38,6 +38,7 @@ const Home = () => {
         mealType={mealType}
         getData={getData}
       />
+{/* // * headera bu değerleri gönderiyoruz. Ve bu değerleri orada cardlara basıyoruz. */}
       {!recipes && (
         <ImgDiv>
           <HomeImg src={homeSvg} />

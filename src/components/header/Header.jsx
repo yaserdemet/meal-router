@@ -8,6 +8,7 @@ import {
 } from './Header.style';
 
 const Header = ({ setQuery, setSelectedMeal, mealType, getData }) => {
+// ! bu değerler homedan geliyor.
   const handleSubmit = (e) => {
     e.preventDefault();
     getData();
