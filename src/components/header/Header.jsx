@@ -1,26 +1,38 @@
-import HeaderStyle, { Select } from "./Header.style";
-import { HeaderContainer, MainHeader, FoodInput, FormContainer, Button } from "./Header.style";
+import {
+  HeaderContainer,
+  MainHeader,
+  FormContainer,
+  FoodInput,
+  Button,
+  Select,
+} from './Header.style';
 
-const Header = ({setQuery , setSelectedMeal , mealTypes, getData}) => {
-
+const Header = ({ setQuery, setSelectedMeal, mealType, getData }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     getData();
-  }
-
+  };
   return (
     <HeaderContainer>
       <MainHeader>Recipe App</MainHeader>
       <FormContainer onSubmit={handleSubmit}>
-        <FoodInput placeholder="Search" type="text"  onChange={(e) => setQuery(e.target.value) }/>
-        <Button type= "submit">Search</Button>
-            <Select name="mealType" id="mealType" onChange={(e) => setSelectedMeal(e.target.value)}>
-              {
-                mealTypes.map((meal,index) => {
-                  return <option key={index} value={meal.toLowerCase()}>{meal}</option>
-                })
-              }
-            </Select>
+        <FoodInput
+          type="text"
+          placeholder="search"
+          onChange={(e) => setQuery(e.target.value)}
+        />
+        <Button type="submit">SEARCH</Button>
+        <Select
+          name="mealType"
+          id="mealType"
+          onChange={(e) => setSelectedMeal(e.target.value)}
+        >
+          {mealType.map((meal, index) => (
+            <option key={index} value={meal.toLowerCase()}>
+              {meal}
+            </option>
+          ))}
+        </Select>
       </FormContainer>
     </HeaderContainer>
   );
