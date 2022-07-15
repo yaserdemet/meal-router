@@ -10,7 +10,7 @@ const About = () => {
       <StyledImage src={codingSvg} />
       <div>
         <h1>
-          About Software Developer <span>Josh Smith</span>
+          About Software Developer <span><small><strong>Yaser DEMET</strong></small></span>
         </h1>
       </div>
       <InfoContainer>
