@@ -7,17 +7,33 @@ import {
   Select,
 } from './Header.style';
 
+import { useEffect } from 'react';
+import { useRef } from 'react';
+
 const Header = ({ setQuery, setSelectedMeal, mealType, getData }) => {
 // ! bu değerler homedan geliyor.
+
+  const inputRef = useRef();
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
     getData();
   };
+
+  useEffect(() => {
+    inputRef.current.focus();
+  }, [])
+
+// sayfa load olunca focuslanmayı useEffect ve useRef kullanarak yapıyoruz.
+
+
   return (
     <HeaderContainer>
       <MainHeader>Recipe App</MainHeader>
       <FormContainer onSubmit={handleSubmit}>
         <FoodInput
+          ref = { inputRef }
           type="text"
           placeholder="search"
           onChange={(e) => setQuery(e.target.value)}
