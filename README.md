@@ -23,6 +23,8 @@
 
 👉 React Router
 
+👉 Local and Session Storage
+
 👉 Deploy with Vercel
 
 ### At the end of the project, i will be able to;
